@@ -1,0 +1,2 @@
+curl -H "Content-Type: application/json" -d '{"Name": "Superman" ,"Age": 900, "Power":"Super strong", "Weakness":"Cheese" }' http://localhost:8090/add
+curl -H "Content-Type: application/json" -d '{"Name":"Supername", "Superhero":{"Name": "Superman" ,"Age": 900, "Power":"Super strong", "Weakness":"kryptonite"} }' http://localhost:8090/update
