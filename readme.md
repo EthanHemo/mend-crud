@@ -25,6 +25,7 @@ To store superheros informations in different database sources, do the following
 
 # APIs  
 ## /add  
+Methoad: POST  
 Accept super hero parameters:  
 ```
 {
@@ -36,6 +37,7 @@ Accept super hero parameters:
 ```
 
 ## /update  
+Methoad: PUT  
 Accept super hero name and parameters parameters:  
 ```
 {
@@ -50,6 +52,7 @@ Accept super hero name and parameters parameters:
 ```
 
 ## /remove  
+Methoad: DELETE  
 Accept super hero name only:  
 ```
 {
@@ -58,6 +61,7 @@ Accept super hero name only:
 ```
 
 ## /Get  
+Methoad: GET  
 Accept super hero name only:  
 ```
 {

@@ -14,6 +14,10 @@ type Payload struct {
 var db databases.Crud
 
 func AddSuperheroHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		http.Error(w, "Methoad not allowed", http.StatusMethodNotAllowed)
+		return
+	}
 	var s databases.Superhero
 	err := json.NewDecoder(r.Body).Decode(&s)
 	if err != nil {
@@ -27,6 +31,10 @@ func AddSuperheroHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func RemoveSuperheroHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodDelete {
+		http.Error(w, "Methoad not allowed", http.StatusMethodNotAllowed)
+		return
+	}
 	var p Payload
 	err := json.NewDecoder(r.Body).Decode(&p)
 	if err != nil {
@@ -40,6 +48,10 @@ func RemoveSuperheroHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func UpdateSuperheroHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPut {
+		http.Error(w, "Methoad not allowed", http.StatusMethodNotAllowed)
+		return
+	}
 	var p Payload
 	err := json.NewDecoder(r.Body).Decode(&p)
 	if err != nil {
@@ -53,6 +65,10 @@ func UpdateSuperheroHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetSuperheroHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodGet {
+		http.Error(w, "Methoad not allowed", http.StatusMethodNotAllowed)
+		return
+	}
 	var p Payload
 	err := json.NewDecoder(r.Body).Decode(&p)
 	if err != nil {
