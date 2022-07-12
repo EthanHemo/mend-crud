@@ -13,10 +13,7 @@ func main() {
 	http.HandleFunc("/update", UpdateSuperheroHandler)
 	http.HandleFunc("/get", GetSuperheroHandler)
 
-	if err := http.ListenAndServe(":8090", nil); err != nil {
+	if err := http.ListenAndServeTLS("localhost:9443", "go-server1.crt", "go-server1.key", nil); err != nil {
 		panic(err)
 	}
-	// if err := http.ListenAndServeTLS("localhost:9443", "server.crt", "server.key", nil); err != nil {
-	// 	panic(err)
-	// }
 }
